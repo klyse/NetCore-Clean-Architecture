@@ -13,7 +13,6 @@ namespace Core.Infrastructure.Persistence.StorageAccount
 
     public class StorageSettings
     {
-        public string Name { get; set; }
-        public string Key { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

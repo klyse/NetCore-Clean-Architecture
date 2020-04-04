@@ -15,27 +15,16 @@ namespace Core.Infrastructure.Persistence.StorageAccount
 
             #region Map appsettings.json
 
-            Settings.Name = configuration
+            Settings.ConnectionString = configuration
                 .GetSection("Azure")
                 .GetSection("Storage")
-                .GetSection("Name").Value;
-
-            Settings.Key = configuration
-                .GetSection("Azure")
-                .GetSection("Storage")
-                .GetSection("Key").Value;
+                .GetSection("ConnectionString").Value;
 
             #endregion
 
             #region Create StorageAccount
 
-            StorageAccount = CloudStorageAccount.Parse(
-                string.Concat(
-                    "DefaultEndpointsProtocol=https;AccountName=",
-                    Settings.Name,
-                    ";AccountKey=",
-                    Settings.Key)
-                );
+			StorageAccount = CloudStorageAccount.Parse(Settings.ConnectionString);
 
             #endregion
 
