@@ -150,8 +150,8 @@ namespace Core.Application.Accounts.Commands
                 //=========================================================================
                 // Create our domain model using AutoMapper to be returned within our response object.
                 // Add additional mappings into the: Core.Startup.AutoMapperConfiguration class.
-
-                var account = AutoMapper.Mapper.Map<Account>(accountDocumentModel);
+                //k.p.
+                //var account = AutoMapper.Mapper.Map<Account>(accountDocumentModel);
 
                 //==========================================================================
                 // POST COMMAND CHECKLIST 
@@ -160,7 +160,8 @@ namespace Core.Application.Accounts.Commands
                 // 2. SEARCH INDEX: Update Search index or send indexer request.
                 //-----------------------------------------------------------------------
 
-                return new CreateAccountCommandResponse { isSuccess = true, Account = account, Message = "Account created." };
+                // k.p.
+                return new CreateAccountCommandResponse { isSuccess = true, Account = null, Message = "Account created." };
             }
             else
             {                  

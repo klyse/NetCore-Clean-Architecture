@@ -8,13 +8,14 @@ namespace Core.Startup
     {
         internal static void Configure()
         {
-            AutoMapper.Mapper.Initialize(cfg => {
-                cfg.CreateMap<AccountDocumentModel, Account>();
-                cfg.CreateMap<AccountDocumentModel, AccountListViewItem>();
+            //k.p.
+            //AutoMapper.Mapper.Initialize(cfg => {
+            //    cfg.CreateMap<AccountDocumentModel, Account>();
+            //    cfg.CreateMap<AccountDocumentModel, AccountListViewItem>();
                 //cfg.CreateMap<EntityDocumentModel, Entity>();
                 //cfg.CreateMap<EntityDocumentModel, Entity>();
                 //cfg.CreateMap<EntityDocumentModel, Entity>();
-            });
+            //});
         }
     }
 }

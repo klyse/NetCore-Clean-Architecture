@@ -97,8 +97,9 @@ namespace Core.Application.Accounts.Queries
             if(accountDocumentModel != null)
             {
                 //Use AutoMapper to transform DocumentModel into Domain Model (Configure via Core.Startup.AutoMapperConfiguration)
-                var account = AutoMapper.Mapper.Map<Account>(accountDocumentModel);
-                accountViewModel.Account = account;
+                //k.p.
+                //var account = AutoMapper.Mapper.Map<Account>(accountDocumentModel);
+                accountViewModel.Account = null;
             }
 
             return accountViewModel;

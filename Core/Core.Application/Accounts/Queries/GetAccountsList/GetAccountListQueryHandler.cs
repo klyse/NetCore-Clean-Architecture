@@ -95,8 +95,9 @@ namespace Core.Application.Accounts.Queries
                     foreach (var accountDocument in result)
                     {
                         //Use AutoMapper to transform DocumentModel into Domain Model (Configure via Core.Startup.AutoMapperConfiguration)
-                        var account = AutoMapper.Mapper.Map<AccountListViewItem>(accountDocument);
-                        accountsListViewModel.Accounts.Add(account);
+                       //k.p.
+						//var account = AutoMapper.Mapper.Map<AccountListViewItem>(accountDocument);
+      //                  accountsListViewModel.Accounts.Add(account);
                     }
                 }
             }

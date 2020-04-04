@@ -133,7 +133,7 @@ namespace ConsoleApp
              * 
              * Note: MediatR should be added LAST. */
 
-            serviceCollection.AddMediatR();
+            serviceCollection.AddMediatR(typeof(CloseAccountCommand));
 
             // Build the provider
             var serviceProvider = serviceCollection.BuildServiceProvider();

@@ -34,6 +34,8 @@ using Core.Infrastructure.Middleware.ExceptionHandling;
 using Core.Application.Accounts.Commands.CreateAccount;
 using Core.Common.Response;
 using Core.Application.Accounts.Models.Views;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Core.Services
 {
@@ -193,16 +195,16 @@ namespace Core.Services
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Core Services", Version = "v1", Description = "REST API for Clean Architecture" });
+                c.SwaggerDoc("v1", new OpenApiInfo{ Title = "Core Services", Version = "v1", Description = "REST API for Clean Architecture" });
             });
 
             #endregion
 
             // Register default WebAPI dependancies
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddJsonOptions(options =>
-                    options.SerializerSettings.Converters.Add(new StringEnumConverter()));
+			services.AddMvc()
+					.SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                //.AddJsonOptions(options =>
+                //    options.SerializerSettings.Converters.Add(new StringEnumConverter()));
 
             //Start the gRPC Server:
             GrpcServer.ServerInitializer.Initialize(Int32.Parse(Configuration.GetSection("gRPC").GetSection("Port").Value), services.BuildServiceProvider(), mapper);
@@ -211,7 +213,7 @@ namespace Core.Services
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -224,6 +226,8 @@ namespace Core.Services
             }
 
             #region Exceptions Middleware
+
+			app.UseRouting();
 
             // Exceptions will be caught, logged and json results will be returned to the caller based on exception type.
 
@@ -249,7 +253,11 @@ namespace Core.Services
             #endregion
 
             app.UseHttpsRedirection();
-            app.UseMvc();
-        }
+
+			app.UseEndpoints(e =>
+							 {
+								 e.MapControllers();
+							 });
+		}
     }
 }
