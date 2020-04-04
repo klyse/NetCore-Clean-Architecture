@@ -99,7 +99,8 @@ namespace Core.Services
 
             #region Initialize 3rd Party Service Dependencies
 
-            IEmailService sendgridService = new SendGridEmailService(Configuration);
+            //IEmailService sendgridService = new SendGridEmailService(Configuration);
+			IEmailService sendgridService = new EmptyEmailService();
 
             #endregion
 

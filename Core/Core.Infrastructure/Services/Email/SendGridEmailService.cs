@@ -8,6 +8,15 @@ using System.Threading.Tasks;
 
 namespace Core.Infrastructure.Services.Email
 {
+	public class EmptyEmailService : IEmailService
+	{
+		public Settings Settings { get; set; }
+		public Task<bool> SendEmail(IEmailMessage emailMessage)
+		{
+			return Task.FromResult(true);
+		}
+	}
+
     public class SendGridEmailService : IEmailService
     {
         public Settings Settings { get; set; }
