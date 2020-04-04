@@ -92,8 +92,8 @@ namespace Core.Services
             #region Initialize our Persistence Layer objects
 
             IDocumentContext documentContext = new DocumentContext(Configuration);
-            IStorageContext storageContext = new StorageContext(Configuration);
-            IRedisContext redisContext = new RedisContext(Configuration);
+            //IStorageContext storageContext = new StorageContext(Configuration);
+            //IRedisContext redisContext = new RedisContext(Configuration);
 
             #endregion
 
@@ -115,8 +115,8 @@ namespace Core.Services
 
             // Persistence
             services.AddSingleton<IDocumentContext>(documentContext);
-            services.AddSingleton<IStorageContext>(storageContext);
-            services.AddSingleton<IRedisContext>(redisContext);
+            //services.AddSingleton<IStorageContext>(storageContext);
+            //services.AddSingleton<IRedisContext>(redisContext);
 
             // 3rd Party Services
             services.AddSingleton<IEmailService>(sendgridService);
