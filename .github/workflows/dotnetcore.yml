@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-deploy:
 
     runs-on: ubuntu-latest
 
@@ -19,7 +19,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.207
+        dotnet-version: 3.1.101
     - name: Install dependencies
       working-directory: ${{env.workingDir}}
       run: dotnet restore
@@ -29,3 +29,13 @@ jobs:
     - name: Test
       working-directory: ${{env.workingDir}}
       run: dotnet test --no-restore --verbosity normal
+    - name: dotnet publish
+      working-directory: ${{env.workingDir}}
+      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: 'cleancode2020(cleancode2020dev)'
+        slot-name: 'cleancode2020dev'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f2269ac9336f4aad96635f0713f15d6e }}
+        package: ${{env.DOTNET_ROOT}}/myapp 
