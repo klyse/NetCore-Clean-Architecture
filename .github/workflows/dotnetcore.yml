@@ -30,7 +30,7 @@ jobs:
     #  working-directory: ${{env.workingDir}}
     #  run: dotnet test --no-restore --verbosity normal
     - name: dotnet publish
-      working-directory: ${{env.workingDir}}
+      working-directory: ${{env.workingDir}}/Core.Services
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
