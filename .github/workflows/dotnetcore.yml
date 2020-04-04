@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-
+    env:
+      workingDir: ./Services
     runs-on: ubuntu-latest
 
     steps:
@@ -18,9 +19,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      working-directory: ./Services
+      working-directory: ${{workingDir}}
       run: dotnet restore
     - name: Build
+      working-directory: ${{workingDir}}
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      working-directory: ${{workingDir}}
       run: dotnet test --no-restore --verbosity normal
