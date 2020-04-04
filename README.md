@@ -1,3 +1,4 @@
+this is a change
 # .Net Core Clean Architecture
 .Net Core starter project for clean architectures and microservices showcasing use of the CQRS pattern, MediatR and custom middleware for cross-cutting concerns, service communications with gRPC & REST APIs using OpenAPI/Swagger, FluentValidation, AutoMapper, CosmosDB for data and Serilog for logging and Table Storage for hybrid event sourcing patterns.
 
