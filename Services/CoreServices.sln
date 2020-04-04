@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{9A129AE7-4BCA-4246-A905-E1F4F1B4DDDA}"
 EndProject
@@ -34,9 +34,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E13035
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.GrpcClientLibrary", "..\Shared\Shared.GrpcClientLibrary\Shared.GrpcClientLibrary.csproj", "{04F43ECD-8DC5-4B4B-BEC6-5D6EE6B1BB5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application.Tests", "..\Tests\Core.Application.Tests\Core.Application.Tests.csproj", "{AD8574DC-CB94-44C9-B867-4F3CB0BE8D67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application.Tests", "..\Tests\Core.Application.Tests\Core.Application.Tests.csproj", "{AD8574DC-CB94-44C9-B867-4F3CB0BE8D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common.Tests", "..\Tests\Core.Common.Tests\Core.Common.Tests.csproj", "{3B7FDE77-B452-4F3F-A597-BE2EEB3370DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Common.Tests", "..\Tests\Core.Common.Tests\Core.Common.Tests.csproj", "{3B7FDE77-B452-4F3F-A597-BE2EEB3370DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{EC1A6AA1-4266-4C6E-A1CB-6041DCF638EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +86,10 @@ Global
 		{3B7FDE77-B452-4F3F-A597-BE2EEB3370DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B7FDE77-B452-4F3F-A597-BE2EEB3370DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B7FDE77-B452-4F3F-A597-BE2EEB3370DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1A6AA1-4266-4C6E-A1CB-6041DCF638EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1A6AA1-4266-4C6E-A1CB-6041DCF638EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1A6AA1-4266-4C6E-A1CB-6041DCF638EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1A6AA1-4266-4C6E-A1CB-6041DCF638EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
